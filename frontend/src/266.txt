@@ -1,0 +1,70 @@
+
+interface CreateModalProps {
+  columns: MRT_ColumnDef<AstronautModel>[];
+  onClose: () => void;
+  onSubmit: (values: AstronautModel) => void;
+  open: boolean;
+}
+
+//example of creating a mui dialog modal for creating new rows
+export const CreateNewAccountModal = ({
+  open,
+  columns,
+  onClose,
+  onSubmit,
+}: CreateModalProps) => {
+  const [values, setValues] = useState<any>(() =>
+    columns.reduce((acc, column) => {
+      acc[column.accessorKey ?? ''] = '';
+      return acc;
+    }, {} as any),
+  );
+
+  const darkTheme = createTheme({
+    palette:{
+      mode: "dark",
+    },
+   });
+
+  const handleSubmit = () => {
+    //put your validation logic here
+    onSubmit(values);
+    onClose();
+  };
+
+
+  //#53 
+  const handleCreateNewRow = (values: AstronautModel) => {
+    tableData.push(values);
+    setTableData([...tableData]);
+  };
+
+
+  //#303
+   const handleSubmit = () => {
+    //put your validation logic here
+    async function onSubmit(input: AstronautApi.AstronautInput) {
+      try {
+        let astronautResponse: AstronautModel;
+        if (astronautTOEdit) {
+          astronautResponse = await AstronautApi.updateAstronaut(astronautTOEdit._id, input);
+        } else {
+          astronautResponse = await AstronautApi.createAstronaut(input);
+        }
+        onAstronautSaved(astronautResponse);
+      } catch (error) {
+        console.error(error);
+        alert(error);
+      }
+    }
+    onSubmit(values);
+    onClose();
+  };
+
+  //53#
+  const handleCreateNewRow = useCallback(
+    (values: AstronautModel) => {
+      setTableData((prevData) => [...prevData, values]);
+    },
+    []
+  );
