@@ -115,7 +115,7 @@ export const upadateAstronaut: RequestHandler<
   const updatedName = req.body.name;
   const updatedAge = req.body.age;
   const updatedNationality = req.body.nationality;
-  const updatedDateOfBirth = req.body.dateOfBirth;
+//  const updatedDateOfBirth = req.body.dateOfBirth;
   const updatedSpaceAgency = req.body.spaceAgency;
   const updatedMissionsCompleted = req.body.missionsCompleted;
   const updatedSkills = req.body.skills || [];

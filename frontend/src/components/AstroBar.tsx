@@ -15,7 +15,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 
-const pages = ['About', 'Manage Astronauts'];
+const pages = ['About'];
 const settings = ['Logout'];
 
 function AstroBar() {

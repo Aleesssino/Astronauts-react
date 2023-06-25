@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
 import "./App.css";
-import { Astronaut as AstronautModel } from "./models/astronaut";
 import AstronautsTable from "./components/AstronautsTable";
 import AstroBar from "./components/AstroBar";
 
@@ -28,8 +26,7 @@ function App() {
   return (
     <div className="App">
       <AstroBar />
-     
-     <p>3:50</p>
+         <p></p>
       <AstronautsTable/>
     </div>
   );
