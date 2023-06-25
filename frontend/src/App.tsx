@@ -1,6 +1,7 @@
 import "./App.css";
 import AstronautsTable from "./components/AstronautsTable";
 import AstroBar from "./components/AstroBar";
+import Background from "./components/Background";
 
 
 function App() {
@@ -25,8 +26,10 @@ function App() {
 */
   return (
     <div className="App">
+      <Background/>      
       <AstroBar />
          <p></p>
+
       <AstronautsTable/>
     </div>
   );
