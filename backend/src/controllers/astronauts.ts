@@ -35,8 +35,6 @@ export const getAstronaut: RequestHandler = async (req, res, next) => {
 };
 
 // create one astronaut
-//mby rewrite = 2:14
-
 interface createAstronautBody {
   name?: string;
   age?: number;
