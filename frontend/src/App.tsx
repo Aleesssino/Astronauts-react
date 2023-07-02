@@ -30,7 +30,7 @@ function App() {
       <Background/>      
       
       <AstroBar />      
-      
+      <div className="p-3"></div>
       <AstronautsTable/>
     </div>
   );

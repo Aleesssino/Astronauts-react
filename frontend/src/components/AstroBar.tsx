@@ -47,7 +47,7 @@ function AstroBar() {
   });
   
   const appBarStyle = {
-    border: '40px solid white',
+    border: '15px solid white',
     
     /* Other styles for the AppBar */
   };
