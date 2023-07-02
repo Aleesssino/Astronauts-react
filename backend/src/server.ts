@@ -1,7 +1,7 @@
 import app from "./app";
 import env from "./util/validateEnv";
 import mongoose from "mongoose";
-//1:26
+
 const port = env.PORT;
 
 mongoose
