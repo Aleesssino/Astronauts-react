@@ -51,12 +51,15 @@ export default function AstronautsTable() {
 
   const handleCreateNewRow = async (values: AstronautModel) => {
     try {
-      const createdAstronaut = await AstronautApi.createAstronaut(values);
+      /*const createdAstronaut = await AstronautApi.createAstronaut(values);
       setAstronautsData((prevAstronautsData) => [
         ...prevAstronautsData,
         createdAstronaut,
-      ]);
-    } catch (error) {
+      ]);*/
+    astronautsData.push(values);
+    setAstronautsData([...astronautsData]);
+    }
+      catch (error) {
       console.error(error);
       alert(error);
     }
@@ -266,8 +269,8 @@ export default function AstronautsTable() {
         open={createModalOpen}
         onClose={() => setCreateModalOpen(false)}
         //fix this
-        onSubmit={handleCreateNewRow}
-        onAstronautSaved={() => setCreateModalOpen(false)}
+        onSubmit={() => setCreateModalOpen(false)}
+        onAstronautSaved={handleCreateNewRow}
       />
     </>
   );
@@ -311,9 +314,13 @@ export const CreateNewAstronautModal = ({
           values
         );
       } else {
+
         astronautResponse = await AstronautApi.createAstronaut(values);
+
       }
+    
       onAstronautSaved(astronautResponse);
+
       onClose();
     } catch (error) {
       console.error(error);

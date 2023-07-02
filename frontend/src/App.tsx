@@ -4,6 +4,7 @@ import AstroBar from "./components/AstroBar";
 import Background from "./components/Background";
 
 
+
 function App() {
  /* const [astronauts, setAstronauts] = useState<AstronautModel[]>([]);
   useEffect(() => {
@@ -27,9 +28,9 @@ function App() {
   return (
     <div className="App">
       <Background/>      
-      <AstroBar />
-         <p></p>
-
+      
+      <AstroBar />      
+      
       <AstronautsTable/>
     </div>
   );

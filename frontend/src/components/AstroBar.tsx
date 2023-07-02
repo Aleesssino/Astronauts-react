@@ -47,7 +47,8 @@ function AstroBar() {
   });
   
   const appBarStyle = {
-    border: '1px solid white',
+    border: '40px solid white',
+    
     /* Other styles for the AppBar */
   };
 
@@ -55,7 +56,7 @@ function AstroBar() {
     <ThemeProvider theme={darkTheme}>
     <AppBar position="static"  color="primary" style={appBarStyle}>
     
-      <Container maxWidth="xl" >
+      <Container maxWidth="xl">
       
         <Toolbar disableGutters>
           <RocketLaunchIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
